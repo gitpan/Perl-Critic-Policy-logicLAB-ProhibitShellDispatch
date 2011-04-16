@@ -1,0 +1,11 @@
+Build.PL
+lib/Perl/Critic/Policy/logicLAB/ProhibitShellDispatch.pm
+Makefile.PL
+MANIFEST			This list of files
+META.json
+META.yml
+README
+t/critic.t
+t/implementation.t
+t/perlcriticrc
+t/test.t

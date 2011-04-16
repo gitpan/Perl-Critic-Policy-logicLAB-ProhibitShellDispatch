@@ -1,0 +1,55 @@
+{
+   "abstract" : "simple policy prohibiting dispatching to shell",
+   "author" : [
+      "Jonas B. Nielsen, <jonasbn@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.110930",
+   "license" : [
+      "artistic_1"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Perl-Critic-Policy-logicLAB-ProhibitShellDispatch",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.38"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Perl::Critic" : 0,
+            "Perl::Critic::Utils" : 0,
+            "Readonly" : 0,
+            "Test::More" : 0,
+            "Test::Perl::Critic" : 0
+         }
+      }
+   },
+   "provides" : {
+      "Perl::Critic::Policy::logicLAB::ProhibitShellDispatch" : {
+         "file" : "lib/Perl/Critic/Policy/logicLAB/ProhibitShellDispatch.pm",
+         "version" : "0.01"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Perl-Critic-logicLAB-Prohibit-ShellDispatch"
+      },
+      "homepage" : "http://logiclab.jira.com/wiki/display/PCPLPSD/Home",
+      "license" : [
+         "http://www.perlfoundation.org/artistic_license_1_0"
+      ],
+      "repository" : {
+         "url" : "http://logicLAB.jira.com/svn/PCPLPSD"
+      },
+      "x_ProjectChangelog" : "http://logiclab.jira.com/browse/PCPLPSD#selectedTab=com.atlassian.jira.plugin.system.project%3Achangelog-panel",
+      "x_ProjectSite" : "http://logicLAB.jira.com/browse/PCPLPSD",
+      "x_ProjectWiki" : "http://logiclab.jira.com/wiki/display/PCPLPSD/Home"
+   },
+   "version" : "0.01"
+}
