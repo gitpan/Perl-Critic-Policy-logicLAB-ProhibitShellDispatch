@@ -1,19 +1,19 @@
 package Perl::Critic::Policy::logicLAB::ProhibitShellDispatch;
 
-# $Id: ProhibitShellDispatch.pm 7588 2011-04-16 16:30:04Z jonasbn $
+# $Id: ProhibitShellDispatch.pm 8114 2013-07-25 12:57:04Z jonasbn $
 
 use strict;
 use warnings;
 use base 'Perl::Critic::Policy';
 use Perl::Critic::Utils qw{ $SEVERITY_MEDIUM };
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 Readonly::Scalar my $EXPL => q{Use Perl builtin instead};
 
 use constant supported_parameters => ();
 use constant default_severity     => $SEVERITY_MEDIUM;
-use constant default_themes       => qw(maintenance);
+use constant default_themes       => qw(logiclab);
 
 sub applies_to {
     return (

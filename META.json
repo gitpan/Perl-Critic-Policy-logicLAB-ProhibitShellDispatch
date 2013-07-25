@@ -4,7 +4,7 @@
       "Jonas B. Nielsen, <jonasbn@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.110930",
+   "generated_by" : "Module::Build version 0.4005, CPAN::Meta::Converter version 2.131560",
    "license" : [
       "artistic_1"
    ],
@@ -16,23 +16,23 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38"
+            "Module::Build" : "0.40"
          }
       },
       "runtime" : {
          "requires" : {
-            "Perl::Critic" : 0,
-            "Perl::Critic::Utils" : 0,
-            "Readonly" : 0,
-            "Test::More" : 0,
-            "Test::Perl::Critic" : 0
+            "Perl::Critic" : "0",
+            "Perl::Critic::Utils" : "0",
+            "Readonly" : "0",
+            "Test::More" : "0",
+            "Test::Perl::Critic" : "0"
          }
       }
    },
    "provides" : {
       "Perl::Critic::Policy::logicLAB::ProhibitShellDispatch" : {
          "file" : "lib/Perl/Critic/Policy/logicLAB/ProhibitShellDispatch.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -51,5 +51,5 @@
       "x_ProjectSite" : "http://logicLAB.jira.com/browse/PCPLPSD",
       "x_ProjectWiki" : "http://logiclab.jira.com/wiki/display/PCPLPSD/Home"
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }

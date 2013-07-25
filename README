@@ -43,11 +43,15 @@ CONFIGURATION AND ENVIRONMENT
     This Policy is not configurable except for the standard options.
 
 DEPENDENCIES AND REQUIREMENTS
-    * Perl::Critic
-    * Perl::Critic::Utils
-    * Readonly
-    * Test::More
-    * Test::Perl::Critic
+    *   Perl::Critic
+
+    *   Perl::Critic::Utils
+
+    *   Readonly
+
+    *   Test::More
+
+    *   Test::Perl::Critic
 
 INCOMPATIBILITIES
     This distribution has no known incompatibilities.
@@ -63,9 +67,11 @@ BUG REPORTING
 TEST AND QUALITY
     The following policies have been disabled for this distribution
 
-    * Perl::Crititc::Policy::ValuesAndExpressions::ProhibitConstantPragma
-    * Perl::Crititc::Policy::NamingConventions::Capitalization
-    * Documentation::RequirePodLinksIncludeText
+    *   Perl::Crititc::Policy::ValuesAndExpressions::ProhibitConstantPragma
+
+    *   Perl::Crititc::Policy::NamingConventions::Capitalization
+
+    *   Documentation::RequirePodLinksIncludeText
 
     See also t/perlcriticrc
 
@@ -78,10 +84,10 @@ TEST AND QUALITY
         ---------------------------- ------ ------ ------ ------ ------ ------ ------
 
 SEE ALSO
-    * http://logiclab.jira.com/wiki/display/PCPLPSD/Home, project Wiki
+    *   <http://logiclab.jira.com/wiki/display/PCPLPSD/Home>, project Wiki
 
 AUTHOR
-    * Jonas B. Nielsen, jonasbn `<jonasbn@cpan.org>'
+    *   Jonas B. Nielsen, jonasbn "<jonasbn@cpan.org>"
 
 LICENSE AND COPYRIGHT
     Copyright (c) 2011 Jonas B. Nielsen. All rights reserved.
