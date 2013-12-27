@@ -1,9 +1,27 @@
 Changes file for Perl::Critic::Policy::logicLAB::ProhibitShellDispatch
 
-$Id: Changes 8113 2013-07-25 12:55:27Z jonasbn $
+$Id$
 
 Project change log:
 http://logicLAB.jira.com/browse/PCPLPSD#selectedTab=com.atlassian.jira.plugin.system.project%3Achangelog-panel
+
+0.03 2013-12-27
+
+- Update recommended
+
+- Specified minimum version of Perl (5.8.0)
+
+- Addressed bug report: RT:91542, Net::OpenSSH's system method would trigger a violation
+  [PCPLPSD-7]
+
+  https://rt.cpan.org/Public/Bug/Display.html?id=91542
+  https://logiclab.jira.com/browse/PCPLPSD-8
+
+- Added changes.t automatic assertion of the integrity of the Changes file, 
+  see also PCPLPSD-5 [PCPLPSD-6]
+
+  https://logiclab.jira.com/browse/PCPLPSD-6
+
 
 0.02 2013-07-25 
 

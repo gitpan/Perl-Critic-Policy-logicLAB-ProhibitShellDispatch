@@ -4,9 +4,9 @@
 # The severity parameter interpretation was added by jonasbn
 # See: http://logiclab.jira.com/wiki/display/OPEN/Test-Perl-Critic
 
-# $Id: critic.t 7587 2011-04-16 16:00:36Z jonasbn $
+# $Id$
 
-# $HeadURL: https://logiclab.jira.com/svn/PCPLPSD/trunk/t/critic.t $
+# $HeadURL$
 
 use strict;
 use warnings;

@@ -1,13 +1,14 @@
 package Perl::Critic::Policy::logicLAB::ProhibitShellDispatch;
 
-# $Id: ProhibitShellDispatch.pm 8114 2013-07-25 12:57:04Z jonasbn $
+# $Id$
 
 use strict;
 use warnings;
 use base 'Perl::Critic::Policy';
 use Perl::Critic::Utils qw{ $SEVERITY_MEDIUM };
+use 5.008;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 Readonly::Scalar my $EXPL => q{Use Perl builtin instead};
 
@@ -16,9 +17,10 @@ use constant default_severity     => $SEVERITY_MEDIUM;
 use constant default_themes       => qw(logiclab);
 
 sub applies_to {
+
     return (
         qw(
-            PPI::Token::Word
+            PPI::Statement
             PPI::Token::QuoteLike::Command
             PPI::Token::QuoteLike::Backtick
             )
@@ -29,16 +31,31 @@ sub violates {
     my ( $self, $elem ) = @_;
 
     #first element PPI::Token::Word (system or exec)
-    if (ref $elem eq 'PPI::Token::Word'
-        and $elem =~ m{
+    if ( ref $elem eq 'PPI::Statement' ) {
+
+        my $word = $elem->find_first('PPI::Token::Word');
+
+        if (    $word
+            and $word =~ m{
             \A  #beginning of string
             (system|exec)
             \Z  #end of string
-    }xsm
-        )
-    {
-        return $self->violation( q{Do not use 'system' or 'exec' statements},
-            $EXPL, $elem );
+        }xsm
+            )
+        {
+
+            #previous significant sibling
+            my $sibling = $word->sprevious_sibling;
+
+            if ( $sibling and $sibling eq '->' ) {
+                return;
+            } else {
+                return $self->violation(
+                    q{Do not use 'system' or 'exec' statements},
+                    $EXPL, $elem );
+            }
+        }
+        return;
     }
 
     if ( ref $elem eq 'PPI::Token::QuoteLike::Command' ) {
@@ -70,7 +87,7 @@ This policy is a policy in the L<Perl::Critic::logicLAB> distribution.
 
 =head1 VERSION
 
-This documentation describes version 0.01
+This documentation describes version 0.03
 
 =head1 DESCRIPTION
 
@@ -109,6 +126,8 @@ This Policy is not configurable except for the standard options.
 
 =over
 
+=item * L<Perl> version 5.8.0
+
 =item * L<Perl::Critic>
 
 =item * L<Perl::Critic::Utils>
@@ -129,11 +148,18 @@ This distribution has no known incompatibilities.
 
 This distribution has no known bugs or limitations.
 
+As pointed out in bug report RT:91542, some modules and components might 
+implement methods/routines holding names similar to the builtins system 
+and exec. I had not anticipated this when first implementing the policy 
+and there might be some cases where the current implementation does not 
+handle these well, please file a bugreport if you run into one of these 
+and I will address these.
+
 =head1 BUG REPORTING
 
 Please use Requets Tracker for bug reporting:
 
-    http://rt.cpan.org/NoAuth/Bugs.html?Dist=Perl-Critic-logicLAB-Prohibit-ShellDispatch
+    http://rt.cpan.org/NoAuth/Bugs.html?Dist=Perl-Critic-Policy-logicLAB-ProhibitShellDispatch
 
 =head1 TEST AND QUALITY
 
@@ -176,9 +202,21 @@ See also F<t/perlcriticrc>
 
 =back
 
+=head1 ACKNOWLEDGEMENTS
+
+=over
+
+=item * Johan the Olive, bug reporting on Net::OpenSSH's system (RT:91542)
+
+=item * Adam Kennedy, author of PPI
+
+=item * Jeffrey Ryan Thalhammer, author of Perl::Critic
+
+=back
+
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2011 Jonas B. Nielsen. All rights reserved.
+Copyright (c) 2013 Jonas B. Nielsen. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 

@@ -6,7 +6,9 @@ MANIFEST			This list of files
 META.json
 META.yml
 README
+t/changes.t
 t/critic.t
 t/implementation.t
 t/perlcriticrc
+t/rt91542.t
 t/test.t
