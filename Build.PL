@@ -19,12 +19,13 @@ my $build = Module::Build->new(
         'Readonly'            => '0',
         'Test::More'          => '0',
         'Test::Perl::Critic'  => '0',
+        'perl'                => '5.8.0',
     },
     meta_merge => {
         resources => {
             homepage => 'http://logiclab.jira.com/wiki/display/PCPLPSD/Home',
             bugtracker => 'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Perl-Critic-logicLAB-Prohibit-ShellDispatch',
-            repository => 'http://logicLAB.jira.com/svn/PCPLPSD',
+            repository => 'https://github.com/jonasbn/pcplpsd',
             ProjectChangelog =>
                 'http://logiclab.jira.com/browse/PCPLPSD#selectedTab=com.atlassian.jira.plugin.system.project%3Achangelog-panel',
             ProjectSite => 'http://logicLAB.jira.com/browse/PCPLPSD',

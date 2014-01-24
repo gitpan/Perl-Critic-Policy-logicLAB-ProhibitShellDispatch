@@ -25,14 +25,15 @@
             "Perl::Critic::Utils" : "0",
             "Readonly" : "0",
             "Test::More" : "0",
-            "Test::Perl::Critic" : "0"
+            "Test::Perl::Critic" : "0",
+            "perl" : "v5.8.0"
          }
       }
    },
    "provides" : {
       "Perl::Critic::Policy::logicLAB::ProhibitShellDispatch" : {
          "file" : "lib/Perl/Critic/Policy/logicLAB/ProhibitShellDispatch.pm",
-         "version" : "0.03"
+         "version" : "0.04"
       }
    },
    "release_status" : "stable",
@@ -45,11 +46,11 @@
          "http://www.perlfoundation.org/artistic_license_1_0"
       ],
       "repository" : {
-         "url" : "http://logicLAB.jira.com/svn/PCPLPSD"
+         "url" : "https://github.com/jonasbn/pcplpsd"
       },
       "x_ProjectChangelog" : "http://logiclab.jira.com/browse/PCPLPSD#selectedTab=com.atlassian.jira.plugin.system.project%3Achangelog-panel",
       "x_ProjectSite" : "http://logicLAB.jira.com/browse/PCPLPSD",
       "x_ProjectWiki" : "http://logiclab.jira.com/wiki/display/PCPLPSD/Home"
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }

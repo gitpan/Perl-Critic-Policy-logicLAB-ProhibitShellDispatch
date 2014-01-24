@@ -8,7 +8,7 @@ use base 'Perl::Critic::Policy';
 use Perl::Critic::Utils qw{ $SEVERITY_MEDIUM };
 use 5.008;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 Readonly::Scalar my $EXPL => q{Use Perl builtin instead};
 
@@ -98,16 +98,16 @@ distributions.
 
 The policy scans for: system, exec, qx and the use of backticks, some basic examples.
 
-    system "touch $0.lock"
+    system "touch $0.lock";
     
     exec "touch $0.lock";
     
     my $hostname = qx/hostname/;
     
-    my $hostname = `hostname`
+    my $hostname = `hostname`;
 
 Instead use the Perl builtins or CPAN distributions. This will make you distribution
-easier to control and easier to distribution accross platforms.
+easier to control and easier to distribute across platforms.
 
     #hostname
     use Net::Domain qw(hostname);
